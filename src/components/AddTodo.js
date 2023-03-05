@@ -9,14 +9,24 @@ function AddTodo(){
 
     const dispatch = useDispatch();
 
-    return (<>
-        <input onChange={(e)=>{
+    return (<div style={{
+        textAlign: "center",
+        display: "flex",
+        gap: "10px",
+        justifyContent: "center"
+    }}>
+        <input style={{
+            padding: "5px 10px",
+            minWidth: "300px"
+        }} onChange={(e)=>{
             setTodo(e.target.value);
         }} type="text" placeholder="Enter Todo" />
-        <button onClick={(e)=>{
+        <button style={{
+            padding: "5px 10px"
+        }} onClick={(e)=>{
             dispatch(addTodo(todo));
         }}>Add Todo</button>
-    </>);
+    </div>);
 }
 
 export default AddTodo;

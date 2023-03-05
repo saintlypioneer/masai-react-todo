@@ -8,12 +8,21 @@ import { Provider } from 'react-redux';
 import TodoList from './components/TodoList';
 import AddTodo from './components/AddTodo';
 
+import { Routes, Route } from 'react-router-dom';
+import TodoItem from './components/TodoItem';
+
 function App() {
   return (
     <Provider store={store} >
-      <AddTodo />
-      <TodoList />
-
+      <Routes>
+        <Route path='/' element={
+          <>
+            <AddTodo />
+            <TodoList />
+          </>
+        } />
+        <Route path='/todo/:id' element={<TodoItem />} />
+      </Routes>
     </Provider>
   );
 }

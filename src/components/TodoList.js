@@ -5,7 +5,11 @@ function TodoList(props){
     const todo = useSelector((store)=>store.todo.todo);
     console.log(todo)
 
-    return (<>
+    return (<div style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center"
+    }}>
     {
         todo.map((item, idx)=>{
             return (
@@ -13,7 +17,7 @@ function TodoList(props){
             );
         })
     }
-    </>);
+    </div>);
 }
 
 export default TodoList;
